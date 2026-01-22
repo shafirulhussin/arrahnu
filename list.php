@@ -22,6 +22,9 @@ $rows = $stmt->fetchAll();
     <nav class="navbar navbar-expand-lg mb-4">
         <div class="container">
             <a class="navbar-brand" href="index.php">AR-RAHNU SYSTEM</a>
+            <div class="ms-auto">
+                <a href="logout.php" class="btn btn-outline-light">Log Keluar</a>
+            </div>
         </div>
     </nav>
     <div class="container">
@@ -73,4 +76,3 @@ $rows = $stmt->fetchAll();
     </div>
 </body>
 </html>
-

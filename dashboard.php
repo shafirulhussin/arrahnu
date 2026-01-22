@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}
 require __DIR__ . '/db.php';
 $beratTotal = (float)$pdo->query("SELECT COALESCE(SUM(berat_emas),0) FROM transaksi_gadaian WHERE status='aktif'")->fetchColumn();
 $pinjamanTotal = (float)$pdo->query("SELECT COALESCE(SUM(jumlah_pinjaman),0) FROM transaksi_gadaian")->fetchColumn();
@@ -81,4 +86,3 @@ $ujrahTotal = (float)$pdo->query("SELECT COALESCE(SUM((nilai_marhun/100)*kadar_u
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

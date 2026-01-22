@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="ms">
 <head>
@@ -83,6 +90,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark mb-5">
         <div class="container">
             <a class="navbar-brand" href="#">AR-RAHNU SYSTEM</a>
+            <div class="ms-auto">
+                <a href="logout.php" class="btn btn-outline-light">Log Keluar</a>
+            </div>
         </div>
     </nav>
 
